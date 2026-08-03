@@ -68,6 +68,8 @@ Open this repository as the primary folder of a ChatGPT desktop local project. T
 
 For a first working session, follow [`docs/tonight_quick_start.md`](docs/tonight_quick_start.md) and use the ready-made starter in [`docs/tonight_session_starter.md`](docs/tonight_session_starter.md).
 
+After the first setup test, normal daily use is intentionally short: open the local project, start Voice, and say `开始今天的 IELTS 口语练习。` The skill then looks for the private topic bank at its default ignored path. Explicitly select `IELTS Speaking Coach` only when implicit activation does not occur.
+
 Example requests:
 
 - `Start today's IELTS speaking practice.`

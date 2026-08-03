@@ -1,6 +1,6 @@
 ---
 name: ielts-speaking-coach
-description: Run personalized IELTS Speaking practice, mock tests, transcript review, correction, topic-bank reuse, repeated-error tracking, and session-report preparation. Use when the user asks to start or review an IELTS speaking session, practise through voice or text, simulate Parts 1-3, analyse a transcript, improve an answer toward Band 7.5, extract reusable expressions, review past practice, or prepare a structured learning report.
+description: Run personalized IELTS Speaking practice, mock tests, transcript review, correction, topic-bank reuse, repeated-error tracking, and session-report preparation. Use when the user says "开始今天的练习", "开始今天的 IELTS 口语练习", "请总结", or asks to practise through voice or text, simulate Parts 1-3, analyse a transcript, improve an answer toward Band 7.5, extract reusable expressions, review past practice, or prepare a structured learning report.
 ---
 
 # IELTS Speaking Coach
@@ -14,10 +14,12 @@ This skill can guide a live voice or text conversation. It does not grant file a
 ## Start a Session
 
 1. Determine the requested mode from the user's words. Read `references/coaching_modes.md` for mode behavior.
-2. Use the learner's supplied topic bank, question source, or previous report when available.
-3. If no source is available, use general IELTS-style practice questions and label them as practice questions rather than official current questions.
-4. Ask only the minimum question needed to begin. Do not make the learner configure the whole system before speaking.
-5. Keep responses suitable for spoken interaction: short while practising, detailed only during review.
+2. When the user asks to start today's practice without providing another source, first look for `data/working_documents/personal_topic_bank/IELTS_Speaking_Complete_A4_Notes_Edition_v2_Working_Copy.docx` in the current project.
+3. Use the learner's supplied topic bank, question source, or previous report when available.
+4. If no source is available, use general IELTS-style practice questions and label them as practice questions rather than official current questions.
+5. If the user does not select a mode or topic, start a 15-minute Topic Focus session. Use a topic not practised recently when session evidence is available; otherwise begin with Hometown.
+6. Ask only the minimum question needed to begin. Do not make the learner configure the whole system before speaking.
+7. Keep responses suitable for spoken interaction: short while practising, detailed only during review.
 
 ## Protect Personal Accuracy
 

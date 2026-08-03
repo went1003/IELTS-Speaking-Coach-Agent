@@ -1,5 +1,7 @@
 # Tonight's Session Starter
 
+> First-time setup test only. Future sessions can start by saying: `开始今天的 IELTS 口语练习。`
+
 Select the `IELTS Speaking Coach` skill and send the following message before starting Voice:
 
 ```text

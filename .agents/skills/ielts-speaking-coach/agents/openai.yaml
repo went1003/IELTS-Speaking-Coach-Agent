@@ -1,4 +1,4 @@
 interface:
   display_name: "IELTS Speaking Coach"
   short_description: "Run personal IELTS speaking practice and structured review"
-  default_prompt: "Use $ielts-speaking-coach to run today’s speaking practice and produce structured feedback."
+  default_prompt: "Use $ielts-speaking-coach to start today's IELTS speaking practice with my local topic bank."
