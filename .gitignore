@@ -1,0 +1,25 @@
+# macOS system files
+.DS_Store
+
+# Secrets and local configuration
+.env
+.streamlit/secrets.toml
+
+# Private learning materials
+data/raw_documents/
+data/working_documents/
+data/database/
+data/output/
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Test and editor caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.vscode/
+.idea/
