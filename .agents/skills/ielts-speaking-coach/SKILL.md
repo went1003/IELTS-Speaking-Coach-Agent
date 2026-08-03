@@ -9,7 +9,7 @@ description: Run personalized IELTS Speaking practice, mock tests, transcript re
 
 Coach one learner through repeatable IELTS Speaking practice while keeping personal facts, adapted stories, model answers, errors, and reports clearly separated.
 
-This skill can guide a live voice or text conversation, but it cannot independently connect ChatGPT Voice to local files. Only claim access to materials that are actually available in the current environment or supplied by the user.
+This skill can guide a live voice or text conversation. It does not grant file access by itself: use only materials available through the current local project, attached sources, or files supplied by the user. Never claim access to unrelated folders or ChatGPT history.
 
 ## Start a Session
 

@@ -20,7 +20,7 @@ Voice or text practice
         -> review in a later session
 ```
 
-The conversational layer may be ChatGPT Voice or another voice-capable assistant. This repository provides the coaching logic and report structure. Version 0.1 does not automatically connect ChatGPT Voice to local files or ChatGPT history.
+The conversational layer may be ChatGPT Voice or another voice-capable assistant. This repository provides the coaching logic and report structure. In a ChatGPT desktop local project, the skill can use files that the project is permitted to access. It does not automatically gain access to unrelated local folders or ChatGPT history.
 
 ## Version 0.1 Scope
 
@@ -49,19 +49,24 @@ The conversational layer may be ChatGPT Voice or another voice-capable assistant
 IELTS-Speaking-Coach-Agent/
 ├── README.md
 ├── .gitignore
-├── skill/
-│   └── ielts-speaking-coach/
-│       ├── SKILL.md
-│       ├── agents/openai.yaml
-│       ├── references/
-│       └── assets/session_report_template.md
+├── .agents/
+│   └── skills/
+│       └── ielts-speaking-coach/
+│           ├── SKILL.md
+│           ├── agents/openai.yaml
+│           ├── references/
+│           └── assets/session_report_template.md
 ├── data/README.md
-└── docs/roadmap.md
+└── docs/
+    ├── roadmap.md
+    └── tonight_quick_start.md
 ```
 
 ## How to Use Version 0.1
 
-Use the skill instructions in an environment that supports skills, or adapt the rules into a ChatGPT Project or Custom GPT instruction set. Supply a transcript or approved personal source when requesting historical review.
+Open this repository as the primary folder of a ChatGPT desktop local project. The desktop app automatically discovers repository skills stored under `.agents/skills`. Start a chat in the project, explicitly select `IELTS Speaking Coach`, and then switch to Voice for spoken practice.
+
+For a first working session, follow [`docs/tonight_quick_start.md`](docs/tonight_quick_start.md) and use the ready-made starter in [`docs/tonight_session_starter.md`](docs/tonight_session_starter.md).
 
 Example requests:
 
