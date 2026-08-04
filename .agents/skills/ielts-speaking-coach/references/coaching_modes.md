@@ -47,6 +47,23 @@ Treat these as natural-language intents rather than exact passwords:
 - `Start today's practice.` -> choose or confirm a practice mode and begin.
 - `Let's do a mock test.` -> enter IELTS Test Mode.
 - `Focus on people topics.` -> enter Topic Focus Mode.
-- `Please summarize.` -> stop questioning and produce structured feedback.
+- `Please summarize.` -> stop questioning, give a short spoken recap, offer Guided Repeat Review, then generate the detailed report automatically.
 - `Review my session from [date].` -> enter Review Mode using available records.
-- `That's all for today.` -> finish and report save status.
+- `That's all for today.` -> use the same complete closing flow as `Please summarize.`
+
+## Closing Flow
+
+Use this sequence without adding new practice questions:
+
+1. Stop the practice session.
+2. Give the short spoken recap.
+3. Ask: `Would you like me to read today's questions and corrected answers aloud at a normal pace for you to follow silently?`
+4. If the learner says Yes, run Guided Repeat Review in the original question order: question -> complete corrected answer -> next question. Use a normal, clear speaking pace without waiting for the learner.
+5. If the learner says No, skip the review.
+6. After either branch, generate the detailed report automatically and state its save status and exact location.
+
+After one complete review pass, ask whether the learner wants the full review again, only part of it, or the report. Repeat this loop until the learner chooses the report.
+
+For a partial request such as `I'd like to repeat part of it`, accept a question number, topic, or recognizable wording. Ask which question only when the target cannot be identified. Read only the selected question and corrected answer, then return to the same loop question.
+
+Do not pause for shadowing, ask the learner to repeat aloud, assess a repetition, start a new lesson, or add another IELTS question during Guided Repeat Review.

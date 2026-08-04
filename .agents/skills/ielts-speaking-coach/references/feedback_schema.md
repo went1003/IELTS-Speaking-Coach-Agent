@@ -50,7 +50,21 @@ Show which confirmed experience or story can support other IELTS topics. Label e
 - Model answer
 - Unverified
 
-## 6. Repeat Practice
+## 6. Spoken Recap
+
+Write a concise recap suitable for reading aloud. Include the main strength, two correction targets, and three useful expressions.
+
+## 7. Guided Repeat Review Decision
+
+After reading the Spoken Recap aloud, ask whether the learner wants to hear today's questions and corrected answers at a normal pace and follow silently.
+
+- If Yes: use the original session order. Read each question and complete corrected answer continuously at a normal, clear pace without waiting for the learner.
+- If No: skip directly to report generation.
+- After a full pass: offer full replay, partial replay, or report generation.
+- For partial replay: read only the selected question and corrected answer, then offer the same three choices again.
+- Do not ask any new practice question in either branch.
+
+## 8. Repeat Practice Content
 
 Choose no more than five high-value sentences. Present:
 
@@ -58,10 +72,22 @@ Choose no more than five high-value sentences. Present:
 2. Short pause marker
 3. One variation
 
-## 7. Spoken Recap
+The detailed report must still include this repeat-practice content even when the learner declines the spoken Guided Repeat Review.
 
-Write a concise recap suitable for reading aloud. Include the main strength, two correction targets, and three useful expressions.
+## 9. Question and Answer Record
 
-## 8. Next Focus
+- List every question practised in the session in its original order.
+- Preserve the learner's original answer when a reliable transcript is available.
+- Add a minimal correction and a natural Band 7.5-level answer.
+- Mark uncertain transcript wording instead of inventing exact quotations.
+
+## 10. Report Save Status
+
+- Format generated: Word or Markdown
+- Archive status: project archive, temporary Voice workspace, skipped, or unavailable
+- Exact save path, when created
+- Session file policy: one separate report per session; never overwrite or merge automatically
+
+## 11. Next Focus
 
 Recommend one next practice focus. Avoid giving a long development plan at the end of every session.

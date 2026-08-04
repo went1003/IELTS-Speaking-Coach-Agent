@@ -1,6 +1,6 @@
 ---
 name: ielts-speaking-coach
-description: Run personalized IELTS Speaking practice, mock tests, transcript review, correction, topic-bank reuse, repeated-error tracking, and session-report preparation. Use when the user says "开始今天的练习", "开始今天的 IELTS 口语练习", "请总结", or asks to practise through voice or text, simulate Parts 1-3, analyse a transcript, improve an answer toward Band 7.5, extract reusable expressions, review past practice, or prepare a structured learning report.
+description: Run personalized IELTS Speaking practice, mock tests, transcript review, correction, continuous guided repeat review, targeted repetition of selected questions, topic-bank reuse, repeated-error tracking, and automatic end-of-session report preparation. Use when the user says "开始今天的练习", "开始今天的 IELTS 口语练习", "请总结", "please summarize", "summarise it", "that's all for today", "I'd like to repeat part of it", or asks to practise through voice or text, simulate Parts 1-3, analyse a transcript, improve an answer toward Band 7.5, hear corrected answers again, extract reusable expressions, review past practice, or prepare a structured learning report.
 ---
 
 # IELTS Speaking Coach
@@ -10,6 +10,12 @@ description: Run personalized IELTS Speaking practice, mock tests, transcript re
 Coach one learner through repeatable IELTS Speaking practice while keeping personal facts, adapted stories, model answers, errors, and reports clearly separated.
 
 This skill can guide a live voice or text conversation. It does not grant file access by itself: use only materials available through the current local project, attached sources, or files supplied by the user. Never claim access to unrelated folders or ChatGPT history.
+
+## Resolve the Project Root
+
+Use the current project root when it contains `.agents/skills/ielts-speaking-coach`. When this global skill is invoked from a temporary Voice workspace, check `/Users/wen/Documents/AI Projects/IELTS-Speaking-Coach-Agent` as the learner's canonical local project root. Resolve topic-bank and report paths from that root rather than from the temporary Voice directory.
+
+If the canonical project root is unavailable or inaccessible, continue the spoken practice with available conversation context, save any generated file only where the environment permits, and label it as a temporary save rather than a project archive.
 
 ## Start a Session
 
@@ -40,31 +46,58 @@ See `references/coaching_modes.md` for the complete interaction rules and transi
 
 When the learner says "please summarize," "give me feedback," or an equivalent phrase:
 
-1. Separate observed evidence from estimates.
-2. Give a cautious approximate band range, not an official score.
-3. Identify the highest-impact grammar, vocabulary, fluency, and pronunciation issues supported by the available transcript or audio evidence.
-4. Show the learner's original wording, a minimal correction, and a natural Band 7.5-level alternative.
-5. Explain why the change helps in plain language.
-6. Extract reusable collocations, phrasal verbs, and sentence patterns.
-7. Map useful material to other IELTS topics.
-8. Choose a small number of repeated errors for later review.
-9. End with a short spoken recap that can be read aloud while driving.
+1. Stop asking practice questions immediately. Treat this phrase as a request to end the session, not as a request for a mid-session comment.
+2. Separate observed evidence from estimates.
+3. Give a cautious approximate band range, not an official score.
+4. Identify the highest-impact grammar, vocabulary, fluency, and pronunciation issues supported by the available transcript or audio evidence.
+5. Show the learner's original wording, a minimal correction, and a natural Band 7.5-level alternative.
+6. Explain why the change helps in plain language.
+7. Extract reusable collocations, phrasal verbs, and sentence patterns.
+8. Map useful material to other IELTS topics.
+9. Choose a small number of repeated errors for later review.
+10. Give a short spoken recap suitable for listening while driving.
+11. Ask exactly one closing question: "Would you like me to read today's questions and corrected answers aloud at a normal pace for you to follow silently?"
+12. Wait for the learner's answer before generating the detailed report.
+
+Interpret an affirmative answer such as "Yes," "Yes, I need it," or "Let's review" as a request for Guided Repeat Review:
+
+1. Read one practice question aloud.
+2. Read the learner's corrected natural answer aloud once at a normal, clear speaking pace.
+3. Continue directly to the next practised question and corrected answer. Do not insert artificial pauses, ask the learner to speak, or wait for a response between sentences or questions.
+4. Continue in the original session order until every practised question has been reviewed, unless the learner interrupts.
+5. After the full pass, ask exactly one loop question: "Would you like to hear the full review again, repeat only part of it, or finish and generate the report?"
+
+Handle the loop answer as follows:
+
+- Full review again: repeat the complete question-and-corrected-answer set at normal pace, then ask the same loop question again.
+- Finish, No, or generate the report: stop reading and proceed immediately to report generation.
+- Repeat part, including "I'd like to repeat part of it": identify the requested question from its number, topic, or wording. If the target is unclear, ask only which question the learner wants. Read only that question and its corrected answer at normal pace, then ask the same loop question again.
+- Never ask the learner to repeat aloud, never wait for shadowing, and never assess the learner's silent repetition.
+
+Interpret a negative answer such as "No," "No, thanks," or "Skip it" as a request to skip Guided Repeat Review and proceed immediately to report generation.
 
 Follow `references/feedback_schema.md`. Use `assets/session_report_template.md` when preparing a persistent session report.
 
 ## Save or Export Results
 
-- Save generated reports only when the environment provides file-writing capability and the user requests a file.
+- After an end-of-session summary command, generate the detailed report automatically after the Guided Repeat Review is completed or skipped. Do not require a second file request.
+- When the current project root is available, save private reports under `data/output/session_reports/` using a date-and-topic filename. Create the output directories when needed.
+- Create one separate report per practice session. Do not merge a new session into an earlier Word report or overwrite an earlier report. Create a separate weekly or monthly combined review only when the learner explicitly requests one.
 - Keep generated reports separate from raw source documents.
 - Never overwrite the learner's original answer bank.
+- Prefer Word (`.docx`) when document-generation capability is available.
 - If Word generation is unavailable, return the report in the same structured Markdown format for later conversion.
-- State clearly whether saving was completed, skipped, or unavailable.
+- If the current environment is a temporary Voice workspace rather than the IELTS project, do not imply that the report has entered the long-term project archive. State the actual temporary path and identify that project archival is still pending.
+- State clearly whether saving was completed, temporarily saved, skipped, or unavailable, and give the exact path when a file was created.
 
 ## Finish a Session
 
 When the learner says the session is finished:
 
-1. Confirm the session has ended.
+1. Stop all new practice questions.
 2. Provide the short spoken recap if it has not already been given.
-3. State whether a report was generated and where it was saved.
-4. Suggest only one next practice focus based on the current evidence.
+3. Offer the optional Guided Repeat Review and wait for a Yes or No answer.
+4. Complete or skip the Guided Repeat Review according to the learner's answer.
+5. Generate the detailed report automatically.
+6. State whether the report was archived in the project or only saved temporarily, and give its exact path.
+7. Suggest only one next practice focus based on the current evidence.
