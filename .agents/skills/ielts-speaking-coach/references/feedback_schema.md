@@ -47,12 +47,22 @@ Keep this as the main body and preserve the original question order. For each qu
 - Key corrections, normally no more than three
 - Natural Band 7 answer
 - Natural word combinations aligned with that answer
+- Language gaps raised in Chinese during the conversation
 
 Use this correction form:
 
 `When you said "[original]", a more natural way to express it is "[correction]". This is mainly a [specific issue] because [brief reason].`
 
 When helpful, add one stronger but natural Band 7 version. Focus first on sentence completion, grammar, prepositions, verb choice, and collocations. Mark uncertain speech-recognition wording as `Possible transcription error`; do not manufacture an exact quotation.
+
+For each Language gap, record:
+
+- The learner's Chinese wording and the topic context
+- Two to four natural English options when they add genuine value
+- A concise usage distinction, such as neutral, informal, formal, or context-specific
+- The best option used in the Natural Band 7 answer
+
+Do not classify a Language gap as a grammar error. Example: `大城市` may be expressed as `major city` in a neutral IELTS answer, `big city` in everyday speech, or `large metropolitan area` when emphasizing scale and urban character.
 
 ### 4. Natural Word Combinations
 
@@ -69,12 +79,13 @@ Bold or italicize the expression inside the Band 7 answer and place its explanat
 
 - A4 portrait.
 - Compact-reference style with a modest title, approximately 14 pt.
-- Main text approximately 9-9.5 pt; headings approximately 10-11 pt.
+- Main text approximately 9.5 pt; headings approximately 10-11 pt.
 - Use a two-column layout table, not newspaper-style flowing columns.
 - Main content column: approximately 14-14.5 cm.
 - Right annotation column: approximately 4-4.5 cm, with a light divider and approximately 7.5-8 pt text.
 - Align each annotation cell vertically with the answer or correction it explains.
 - Use the right column for Chinese meanings, synonyms/paraphrases, concise grammar labels, and short examples.
+- Add visible inner padding on both sides of the vertical divider so neither column touches the line.
 - Leave unused space in the right column blank for handwritten notes.
 - Avoid decorative packaging, dense borders, generic advice, repeated spoken-recap text, and Guided Repeat Review metadata.
 

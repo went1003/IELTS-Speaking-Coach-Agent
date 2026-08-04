@@ -7,7 +7,7 @@ This is the minimum no-API workflow for completing one useful speaking session t
 The longer `Read docs...` message is only a first-time setup test. For normal daily use, open this local project, start Voice, and say:
 
 ```text
-开始今天的 IELTS 口语练习。
+Start today's IELTS speaking practice.
 ```
 
 The skill should activate implicitly, read the default private topic-bank path, and begin a 15-minute Topic Focus session. If implicit activation does not occur, explicitly select `IELTS Speaking Coach` once and repeat the same sentence.
@@ -36,10 +36,11 @@ Check that the response contains:
 
 - approximate band range;
 - priority corrections;
-- Band 7.5-level alternatives;
+- natural Band 7-level alternatives;
+- any Chinese-to-English Language gaps raised during practice;
 - reusable expressions and verb phrases;
-- topic reuse suggestions;
-- repeat-practice sentences;
-- a short spoken recap.
+- a short spoken recap;
+- an optional continuous full or partial repeat review;
+- a compact Word report saved under `data/output/session_reports`.
 
-Version 0.1 does not automatically save a Word report or long-term database record. Preserve the chat after the session; report export and persistent error tracking are planned for later versions.
+Version 0.2 saves a separate Word report for each completed session. Long-term database records and cross-session statistics remain planned work.

@@ -28,6 +28,10 @@
 
 [Complete natural answer. Bold or italicize useful expressions that are explained in the aligned right annotation column.]
 
+**Language gaps raised in Chinese**
+
+- **[Chinese wording]** - [best English option]; alternatives: [option 2 / option 3]; usage: [brief distinction]
+
 **Aligned annotation column**
 
 - **[Expression]** - [Chinese meaning]; alternatives: [synonym 1 / synonym 2]; example: [short example]
@@ -44,8 +48,9 @@
 
 - A4 portrait; target one or two pages, maximum two.
 - Use a border-light two-column layout table so notes align with the relevant answer.
-- Main content: approximately 14-14.5 cm wide, 9-9.5 pt body text.
+- Main content: approximately 14-14.5 cm wide, approximately 9.5 pt body text.
 - Right notes: approximately 4-4.5 cm wide, 7.5-8 pt text with a light left divider.
+- Add approximately 2.5-3 mm of inner space on each side of the vertical divider.
 - Title approximately 14 pt; section headings approximately 10-11 pt.
-- Right notes contain concise Chinese meanings, synonyms/paraphrases, grammar labels, and short examples. Leave unused space blank for handwriting.
+- Right notes contain concise Chinese meanings, synonyms/paraphrases, Language gaps, grammar labels, and short examples. Leave unused space blank for handwriting.
 - Do not include daily `What You Did Well`, detailed score tables, Guided Repeat Review metadata, repeated spoken recap, long topic maps, or generic advice.

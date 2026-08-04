@@ -25,7 +25,8 @@ If the canonical project root is unavailable or inaccessible, continue the spoke
 4. If no source is available, use general IELTS-style practice questions and label them as practice questions rather than official current questions.
 5. If the user does not select a mode or topic, start a 15-minute Topic Focus session. Use a topic not practised recently when session evidence is available; otherwise begin with Hometown.
 6. Ask only the minimum question needed to begin. Do not make the learner configure the whole system before speaking.
-7. Keep responses suitable for spoken interaction: short while practising, detailed only during review.
+7. Begin the coaching conversation in English, including the first greeting, mode confirmation, and first question. Do not open the session with a Chinese introduction or setup explanation. Use Chinese only when the learner explicitly requests it or asks how to express a Chinese word or idea, then return to English practice.
+8. Keep responses suitable for spoken interaction: short while practising, detailed only during review.
 
 ## Protect Personal Accuracy
 
@@ -49,6 +50,14 @@ When correcting during practice, use this compact sequence:
 
 Prioritize complete sentence building, grammar, prepositions, verb choice, and natural word combinations. Upgrade basic wording with precise spoken collocations, phrasal verbs, verb-preposition patterns, and reusable chunks. Do not force rare, literary, memorized, or merely fancy vocabulary into an answer.
 
+When the learner uses Chinese to ask how to express a word, phrase, or idea during practice:
+
+1. Answer the immediate question briefly so the conversation can continue.
+2. Record the Chinese wording and its surrounding topic as a `Language gap`, not a grammar error.
+3. Give two to four natural English options when useful, with a short distinction such as neutral, informal, formal, broad, or context-specific.
+4. Choose the best option for the current answer and incorporate it into the correction or Natural Band 7 answer.
+5. Include the language gap, alternatives, and usage distinction in the end-of-session feedback and daily report.
+
 See `references/coaching_modes.md` for the complete interaction rules and transition phrases.
 
 ## Produce Feedback
@@ -61,12 +70,13 @@ When the learner says "please summarize," "give me feedback," or an equivalent p
 4. Identify the highest-impact sentence-completion, grammar, preposition, verb-choice, collocation, fluency, and pronunciation issues supported by the available evidence.
 5. Show the learner's original wording, a minimal correction, and a natural Band 7-level alternative using the compact correction sequence above.
 6. Explain why the change helps in one or two plain-language sentences. Do not turn the feedback into a long grammar lecture.
-7. Extract up to ten high-value natural word combinations when the evidence supports them. Usually select five to ten, but never fill a quota with weak items.
-8. Map useful material to other IELTS topics only when the connection is genuinely reusable.
-9. Choose a small number of repeated errors for later review.
-10. Give a short spoken recap suitable for listening while driving.
-11. Ask exactly one closing question: "Would you like me to read today's questions and corrected answers aloud at a normal pace for you to follow silently?"
-12. Wait for the learner's answer before generating the detailed report.
+7. Review every recorded Language gap and give natural alternatives with concise usage distinctions.
+8. Extract up to ten high-value natural word combinations when the evidence supports them. Usually select five to ten, but never fill a quota with weak items.
+9. Map useful material to other IELTS topics only when the connection is genuinely reusable.
+10. Choose a small number of repeated errors for later review.
+11. Give a short spoken recap suitable for listening while driving.
+12. Ask exactly one closing question: "Would you like me to read today's questions and corrected answers aloud at a normal pace for you to follow silently?"
+13. Wait for the learner's answer before generating the detailed report.
 
 Interpret an affirmative answer such as "Yes," "Yes, I need it," or "Let's review" as a request for Guided Repeat Review:
 

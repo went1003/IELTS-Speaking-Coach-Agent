@@ -142,14 +142,14 @@ def set_table_geometry(table):
             tc_w.set(qn("w:type"), "dxa")
 
 
-def style_paragraph(paragraph, *, size=8.9, after=1.4, before=0, line=1.0, color=INK):
+def style_paragraph(paragraph, *, size=9.4, after=1.4, before=0, line=1.0, color=INK):
     fmt = paragraph.paragraph_format
     fmt.space_before = Pt(before)
     fmt.space_after = Pt(after)
     fmt.line_spacing = line
 
 
-def add_labeled_paragraph(cell, label, text, *, size=8.9, after=1.5):
+def add_labeled_paragraph(cell, label, text, *, size=9.4, after=1.5):
     paragraph = cell.add_paragraph() if cell.paragraphs[0].text else cell.paragraphs[0]
     label_run = paragraph.add_run(label)
     set_run_font(label_run, size, bold=True, color=ACCENT)
@@ -159,7 +159,7 @@ def add_labeled_paragraph(cell, label, text, *, size=8.9, after=1.5):
     return paragraph
 
 
-def add_highlighted_text(paragraph, text, phrases, *, size=8.9):
+def add_highlighted_text(paragraph, text, phrases, *, size=9.4):
     valid_phrases = sorted({p.strip() for p in phrases if p and p.strip()}, key=len, reverse=True)
     if not valid_phrases:
         run = paragraph.add_run(text)
@@ -188,8 +188,9 @@ def add_body_row(table, *, main_builder, notes_builder=None, top_rule=False):
     main, notes = cells
     for cell in cells:
         cell.vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.TOP
-        set_cell_margins(cell)
         set_cell_borders(cell, left={"val": "nil"}, right={"val": "nil"}, top={"val": "nil"}, bottom={"val": "nil"})
+    set_cell_margins(main, start=70, end=160)
+    set_cell_margins(notes, start=160, end=70)
     set_cell_borders(notes, left={"val": "single", "sz": 5, "color": DIVIDER})
     if top_rule:
         set_cell_borders(main, top={"val": "single", "sz": 4, "color": DIVIDER})
@@ -219,7 +220,7 @@ def build_report(data: dict, output_path: Path):
     normal_fonts.set(qn("w:hAnsi"), BODY_FONT)
     normal_fonts.set(qn("w:eastAsia"), EAST_ASIA_FONT)
     normal_fonts.set(qn("w:cs"), BODY_FONT)
-    normal.font.size = Pt(8.9)
+    normal.font.size = Pt(9.4)
     normal.font.color.rgb = INK
     normal.paragraph_format.space_after = Pt(1.4)
     normal.paragraph_format.line_spacing = 1.0
@@ -227,7 +228,7 @@ def build_report(data: dict, output_path: Path):
     title = doc.add_paragraph()
     title.alignment = WD_ALIGN_PARAGRAPH.LEFT
     title_run = title.add_run(f"IELTS Speaking Practice Report - {data['date']}")
-    set_run_font(title_run, 12.7, bold=True, color=ACCENT)
+    set_run_font(title_run, 13.2, bold=True, color=ACCENT)
     title.paragraph_format.space_after = Pt(1.0)
 
     topic = doc.add_paragraph()
@@ -253,7 +254,9 @@ def build_report(data: dict, output_path: Path):
 
     for index, question in enumerate(data.get("questions", []), start=1):
         expressions = question.get("expressions", [])[:10]
+        language_gaps = question.get("language_gaps", [])
         phrases = [item.get("phrase", "") for item in expressions]
+        phrases.extend(item.get("best_choice", "") for item in language_gaps)
 
         def question_main(cell, number=index, item=question):
             p = cell.paragraphs[0]
@@ -262,8 +265,8 @@ def build_report(data: dict, output_path: Path):
             style_paragraph(p, size=10.0, after=1.0)
             q = cell.add_paragraph()
             q_run = q.add_run(item["question"])
-            set_run_font(q_run, 9.1, bold=True)
-            style_paragraph(q, size=9.1, after=1.5)
+            set_run_font(q_run, 9.7, bold=True)
+            style_paragraph(q, size=9.7, after=1.5)
 
         add_body_row(table, main_builder=question_main, top_rule=True)
 
@@ -280,8 +283,8 @@ def build_report(data: dict, output_path: Path):
         def corrections_main(cell, items=corrections):
             p = cell.paragraphs[0]
             r = p.add_run("Key corrections")
-            set_run_font(r, 9.1, bold=True, color=ACCENT)
-            style_paragraph(p, size=9.1, after=1.0)
+            set_run_font(r, 9.6, bold=True, color=ACCENT)
+            style_paragraph(p, size=9.6, after=1.0)
             for correction in items:
                 cp = cell.add_paragraph()
                 sentence = (
@@ -289,8 +292,8 @@ def build_report(data: dict, output_path: Path):
                     f"\"{correction['natural']}\". {correction['reason']}"
                 )
                 cr = cp.add_run(sentence)
-                set_run_font(cr, 8.6)
-                style_paragraph(cp, size=8.6, after=1.3)
+                set_run_font(cr, 9.0)
+                style_paragraph(cp, size=9.0, after=1.3)
 
         def corrections_notes(cell, items=corrections):
             for correction in items:
@@ -301,13 +304,19 @@ def build_report(data: dict, output_path: Path):
         def answer_main(cell, item=question, key_phrases=phrases):
             p = cell.paragraphs[0]
             r = p.add_run("Natural Band 7 answer")
-            set_run_font(r, 9.1, bold=True, color=ACCENT)
-            style_paragraph(p, size=9.1, after=1.0)
+            set_run_font(r, 9.6, bold=True, color=ACCENT)
+            style_paragraph(p, size=9.6, after=1.0)
             answer = cell.add_paragraph()
-            add_highlighted_text(answer, item["band7_answer"], key_phrases, size=8.9)
-            style_paragraph(answer, size=8.9, after=1.5)
+            add_highlighted_text(answer, item["band7_answer"], key_phrases, size=9.4)
+            style_paragraph(answer, size=9.4, after=1.5)
 
-        def answer_notes(cell, items=expressions):
+        def answer_notes(cell, items=expressions, gaps=language_gaps):
+            for gap in gaps:
+                options = gap.get("options", [])
+                option_text = "; ".join(
+                    f"{option.get('expression', '')} ({option.get('usage', '')})" for option in options
+                )
+                add_note(cell, f"Language gap - {gap.get('chinese', '')}: ", option_text)
             for expression in items:
                 parts = []
                 if expression.get("meaning_zh"):
@@ -322,7 +331,7 @@ def build_report(data: dict, output_path: Path):
 
     if data.get("next_focus"):
         def focus_main(cell):
-            add_labeled_paragraph(cell, "NEXT FOCUS: ", data["next_focus"], size=8.7)
+            add_labeled_paragraph(cell, "NEXT FOCUS: ", data["next_focus"], size=9.1)
 
         def focus_notes(cell):
             add_note(cell, "HANDWRITTEN NOTES", "\n\n")

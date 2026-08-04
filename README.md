@@ -2,6 +2,8 @@
 
 A privacy-first, no-API workflow for personalized IELTS Speaking practice, feedback, long-term error tracking, and review.
 
+**Status:** Working local prototype (v0.2), tested with ChatGPT Voice and Codex. No external AI API is required for the current workflow.
+
 ## Why This Is a Separate Project
 
 The earlier `IELTS-Speaking-Personal-Coach` repository explored an offline Streamlit recording and playback prototype. That prototype answered a technical question: can a small local web app guide recording and replay without an AI API?
@@ -24,15 +26,18 @@ The current reference implementation is optimized for ChatGPT Voice and Codex. T
 
 The core coaching workflow is platform-independent, but the skill package is not a universal plug-in format. The questioning, correction, review, and reporting rules could later be adapted for another voice-capable platform such as WorkBuddy or Tencent Yuanbao. Platform-specific discovery, permissions, local-file access, voice behavior, and Word generation would need separate implementation and testing.
 
-## Version 0.1 Scope
+## Current Scope - Version 0.2
 
 - Daily conversation practice rules
+- English-first voice practice, including the opening question and transitions
 - IELTS Speaking Part 1, Part 2, and Part 3 test behavior
 - Topic-focused practice using personal material
 - End-of-session feedback structure
 - Natural Band 7-level answer improvement without forced or overly fancy vocabulary
 - Reusable collocations and verb-phrase extraction
+- Capture of Chinese-to-English language gaps with alternatives and usage distinctions
 - Compact one- or two-page A4 daily reports with an aligned annotation margin
+- A deterministic local Word report builder
 - Separate weekly progress reports on request
 - Real, adapted, model, and unverified source labels
 - Privacy rules for personal documents and generated reports
@@ -74,7 +79,7 @@ Open this repository as the primary folder of a ChatGPT desktop local project. T
 
 For a first working session, follow [`docs/tonight_quick_start.md`](docs/tonight_quick_start.md) and use the ready-made starter in [`docs/tonight_session_starter.md`](docs/tonight_session_starter.md).
 
-After the first setup test, normal daily use is intentionally short: open the local project, start Voice, and say `开始今天的 IELTS 口语练习。` The skill then looks for the private topic bank at its default ignored path. Explicitly select `IELTS Speaking Coach` only when implicit activation does not occur.
+After the first setup test, normal daily use is intentionally short: open the local project, start Voice, and say `Start today's IELTS speaking practice.` A Chinese trigger phrase also works, but the coach begins the practice itself in English. The skill then looks for the private topic bank at its default ignored path. Explicitly select `IELTS Speaking Coach` only when implicit activation does not occur.
 
 Example requests:
 
@@ -82,6 +87,18 @@ Example requests:
 - `Run an IELTS Speaking mock test and do not correct me until the end.`
 - `Review this transcript and improve my answers toward Band 7.5.`
 - `Summarize my repeated errors and prepare a session report.`
+
+During practice, the learner may ask a short Chinese vocabulary question such as `大城市怎么说？`. The coach records this as a Language gap, offers natural alternatives such as `major city`, `big city`, and `large metropolitan area`, and reuses the best option in the corrected answer and report.
+
+## Portfolio Relevance
+
+This project demonstrates a complete small-product workflow rather than only a prompt file:
+
+- Product discovery: the original offline recorder was tested, evaluated, and deliberately reframed around the learner's real Voice workflow.
+- Prompt and interaction design: practice modes, test-mode boundaries, correction behavior, repeat-review loops, and report triggers are documented as reusable rules.
+- Document automation: structured session data is converted into a compact bilingual A4 Word report with aligned study notes.
+- Privacy-first engineering: personal topic banks, transcripts, reports, databases, and local configuration remain outside the public repository.
+- Iterative development: real practice sessions produced specific product changes, validation steps, and version-controlled improvements.
 
 ## Privacy
 

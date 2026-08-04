@@ -1,5 +1,12 @@
 # Coaching Modes
 
+## Session Language
+
+- Start every practice session in English, even when the learner uses a Chinese trigger phrase to launch it.
+- Use English for greetings, instructions, questions, corrections, and transitions by default.
+- Do not give a Chinese opening explanation unless the learner explicitly requests Chinese.
+- If the learner asks in Chinese how to express something, answer that vocabulary question briefly, record it as a Language gap, and resume the English conversation.
+
 ## Daily Conversation Mode
 
 Use for natural, multi-turn English conversation.
@@ -9,6 +16,7 @@ Use for natural, multi-turn English conversation.
 - Correct only errors that affect clarity, naturalness, or a known repeated pattern.
 - Use this cycle: learner answer -> brief correction -> natural alternative -> learner repeats -> continue.
 - Do not turn every reply into a long IELTS lecture.
+- Preserve Chinese vocabulary questions as Language gaps for the final feedback and report.
 
 ## IELTS Test Mode
 
