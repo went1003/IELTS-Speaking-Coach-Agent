@@ -13,7 +13,7 @@ This skill can guide a live voice or text conversation. It does not grant file a
 
 ## Resolve the Project Root
 
-Use the current project root when it contains `.agents/skills/ielts-speaking-coach`. When this global skill is invoked from a temporary Voice workspace, check `/Users/wen/Documents/AI Projects/IELTS-Speaking-Coach-Agent` as the learner's canonical local project root. Resolve topic-bank and report paths from that root rather than from the temporary Voice directory.
+Use the current project root when it contains `.agents/skills/ielts-speaking-coach`. When this global skill is invoked from a temporary Voice workspace, look for `IELTS-Speaking-Coach-Agent` under the current user's Documents folder, including `~/Documents/AI Projects/IELTS-Speaking-Coach-Agent`. Resolve topic-bank and report paths from that root rather than from the temporary Voice directory. Never put a user-specific absolute path in the public skill package.
 
 If the canonical project root is unavailable or inaccessible, continue the spoken practice with available conversation context, save any generated file only where the environment permits, and label it as a temporary save rather than a project archive.
 
@@ -40,6 +40,15 @@ Never convert an adapted story or model answer into a personal fact. When a stat
 - In Topic Focus Mode, reuse one personal topic across several relevant question types and show how the same material can be adapted without sounding memorized.
 - In Review Mode, use available past reports or transcripts. Never invent previous sessions.
 
+When correcting during practice, use this compact sequence:
+
+1. `When you said "[original wording]", a more natural way to express it is "[correction]".`
+2. Name one primary issue: tense, sentence completion, preposition, verb choice, collocation, agreement, or another precise label.
+3. Explain the reason in one or two plain-language sentences.
+4. Offer one stronger but still natural Band 7-level alternative when the original wording is basic, vague, or fragmented.
+
+Prioritize complete sentence building, grammar, prepositions, verb choice, and natural word combinations. Upgrade basic wording with precise spoken collocations, phrasal verbs, verb-preposition patterns, and reusable chunks. Do not force rare, literary, memorized, or merely fancy vocabulary into an answer.
+
 See `references/coaching_modes.md` for the complete interaction rules and transition phrases.
 
 ## Produce Feedback
@@ -49,11 +58,11 @@ When the learner says "please summarize," "give me feedback," or an equivalent p
 1. Stop asking practice questions immediately. Treat this phrase as a request to end the session, not as a request for a mid-session comment.
 2. Separate observed evidence from estimates.
 3. Give a cautious approximate band range, not an official score.
-4. Identify the highest-impact grammar, vocabulary, fluency, and pronunciation issues supported by the available transcript or audio evidence.
-5. Show the learner's original wording, a minimal correction, and a natural Band 7.5-level alternative.
-6. Explain why the change helps in plain language.
-7. Extract reusable collocations, phrasal verbs, and sentence patterns.
-8. Map useful material to other IELTS topics.
+4. Identify the highest-impact sentence-completion, grammar, preposition, verb-choice, collocation, fluency, and pronunciation issues supported by the available evidence.
+5. Show the learner's original wording, a minimal correction, and a natural Band 7-level alternative using the compact correction sequence above.
+6. Explain why the change helps in one or two plain-language sentences. Do not turn the feedback into a long grammar lecture.
+7. Extract up to ten high-value natural word combinations when the evidence supports them. Usually select five to ten, but never fill a quota with weak items.
+8. Map useful material to other IELTS topics only when the connection is genuinely reusable.
 9. Choose a small number of repeated errors for later review.
 10. Give a short spoken recap suitable for listening while driving.
 11. Ask exactly one closing question: "Would you like me to read today's questions and corrected answers aloud at a normal pace for you to follow silently?"
@@ -76,7 +85,9 @@ Handle the loop answer as follows:
 
 Interpret a negative answer such as "No," "No, thanks," or "Skip it" as a request to skip Guided Repeat Review and proceed immediately to report generation.
 
-Follow `references/feedback_schema.md`. Use `assets/session_report_template.md` when preparing a persistent session report.
+Do not score pronunciation from a transcript alone. If wording may be an automatic speech-recognition error, label it `Possible transcription error` rather than treating it as the learner's grammar mistake.
+
+Follow `references/feedback_schema.md`. Use `assets/session_report_template.md` for a daily report and `assets/weekly_report_template.md` only when the learner explicitly requests a weekly report. When Word generation is available, prefer `scripts/build_session_report.py` for the compact A4 daily layout.
 
 ## Save or Export Results
 
@@ -87,8 +98,9 @@ Follow `references/feedback_schema.md`. Use `assets/session_report_template.md` 
 - Never overwrite the learner's original answer bank.
 - Prefer Word (`.docx`) when document-generation capability is available.
 - If Word generation is unavailable, return the report in the same structured Markdown format for later conversion.
-- If the current environment is a temporary Voice workspace rather than the IELTS project, do not imply that the report has entered the long-term project archive. State the actual temporary path and identify that project archival is still pending.
-- State clearly whether saving was completed, temporarily saved, skipped, or unavailable, and give the exact path when a file was created.
+- If the current environment is a temporary Voice workspace rather than the IELTS project, copy the finished report to the project archive when that location is available and permitted. Return the project-archive link, not the temporary working-copy link.
+- If the project archive is unavailable, do not imply that archiving succeeded. State the actual temporary path and identify that project archival is still pending.
+- State clearly whether saving was completed, temporarily saved, skipped, or unavailable, and give the exact final path when a file was created.
 
 ## Finish a Session
 

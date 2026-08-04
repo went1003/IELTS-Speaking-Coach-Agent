@@ -20,7 +20,9 @@ Voice or text practice
         -> review in a later session
 ```
 
-The conversational layer may be ChatGPT Voice or another voice-capable assistant. This repository provides the coaching logic and report structure. In a ChatGPT desktop local project, the skill can use files that the project is permitted to access. It does not automatically gain access to unrelated local folders or ChatGPT history.
+The current reference implementation is optimized for ChatGPT Voice and Codex. This repository provides the coaching logic, local-file workflow, and report structure. In a ChatGPT desktop local project, the skill can use files that the project is permitted to access. It does not automatically gain access to unrelated local folders or ChatGPT history.
+
+The core coaching workflow is platform-independent, but the skill package is not a universal plug-in format. The questioning, correction, review, and reporting rules could later be adapted for another voice-capable platform such as WorkBuddy or Tencent Yuanbao. Platform-specific discovery, permissions, local-file access, voice behavior, and Word generation would need separate implementation and testing.
 
 ## Version 0.1 Scope
 
@@ -28,8 +30,10 @@ The conversational layer may be ChatGPT Voice or another voice-capable assistant
 - IELTS Speaking Part 1, Part 2, and Part 3 test behavior
 - Topic-focused practice using personal material
 - End-of-session feedback structure
-- Approximate Band 7.5-level answer improvement
+- Natural Band 7-level answer improvement without forced or overly fancy vocabulary
 - Reusable collocations and verb-phrase extraction
+- Compact one- or two-page A4 daily reports with an aligned annotation margin
+- Separate weekly progress reports on request
 - Real, adapted, model, and unverified source labels
 - Privacy rules for personal documents and generated reports
 - A reusable Markdown session-report template
@@ -40,7 +44,7 @@ The conversational layer may be ChatGPT Voice or another voice-capable assistant
 - Automatic access to ChatGPT Voice history
 - Automatic speech-to-text
 - SQLite error history
-- Automatic Word report generation
+- A hosted or API-driven Word report service
 - Cloud deployment or multi-user accounts
 
 ## Repository Structure
@@ -55,7 +59,9 @@ IELTS-Speaking-Coach-Agent/
 │           ├── SKILL.md
 │           ├── agents/openai.yaml
 │           ├── references/
-│           └── assets/session_report_template.md
+│           ├── assets/session_report_template.md
+│           ├── assets/weekly_report_template.md
+│           └── scripts/build_session_report.py
 ├── data/README.md
 └── docs/
     ├── roadmap.md
@@ -80,3 +86,5 @@ Example requests:
 ## Privacy
 
 Personal answer banks, transcripts, databases, work documents, and generated reports are intentionally excluded from Git. Only reusable rules, templates, and public documentation belong in this repository.
+
+Public skill files use relative or home-relative paths. User-specific absolute paths and private local configuration must not be committed.

@@ -1,4 +1,4 @@
 interface:
   display_name: "IELTS Speaking Coach"
-  short_description: "Practise IELTS, replay corrected answers, and save reports"
-  default_prompt: "Use $ielts-speaking-coach to start today's IELTS speaking practice with my local topic bank. When I ask to summarize, stop the practice, give a spoken recap, offer a continuous normal-pace review with full or partial replay, then generate a separate detailed session report automatically."
+  short_description: "Practise IELTS, improve wording, replay answers, and save compact reports"
+  default_prompt: "Use $ielts-speaking-coach to start today's IELTS speaking practice with my local topic bank. Correct me briefly with precise error labels and natural Band 7 wording. When I ask to summarize, stop the practice, give a spoken recap, offer a continuous normal-pace review with full or partial replay, then generate a compact A4 session report automatically."

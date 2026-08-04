@@ -1,60 +1,14 @@
 # Feedback Schema
 
-Use the following order for end-of-session feedback.
+Separate the spoken closing flow from the persistent report. Spoken feedback may be conversational; the daily report must be a compact retrieval and print document rather than an essay.
 
-## 1. Session Snapshot
+## Spoken Closing Flow
 
-- Date
-- Mode
-- Topic or question set
-- Evidence reviewed: transcript, audio, notes, or live conversation
-- Evidence limitation
-
-## 2. Approximate IELTS Assessment
-
-- Estimated overall band range
-- Fluency and Coherence
-- Lexical Resource
-- Grammatical Range and Accuracy
-- Pronunciation, only when audio evidence is available
-
-State that the estimate is formative feedback rather than an official IELTS score.
-
-## 3. Priority Corrections
-
-For each important error, record:
-
-- Original wording
-- Minimal correction
-- Natural Band 7.5-level alternative
-- Plain-language reason
-- Error type
-- Repeat status: new, recurring, or unverified
-
-Do not manufacture an exact original quotation when only a summary is available.
-
-## 4. Reusable Language
-
-- Collocations
-- Phrasal verbs and verb phrases
-- Sentence patterns
-- Natural linking language
-- One original example connected to the learner's confirmed life
-
-## 5. Topic Reuse Map
-
-Show which confirmed experience or story can support other IELTS topics. Label each item as:
-
-- Real experience
-- Adapted experience
-- Model answer
-- Unverified
-
-## 6. Spoken Recap
+### 1. Spoken Recap
 
 Write a concise recap suitable for reading aloud. Include the main strength, two correction targets, and three useful expressions.
 
-## 7. Guided Repeat Review Decision
+### 2. Guided Repeat Review Decision
 
 After reading the Spoken Recap aloud, ask whether the learner wants to hear today's questions and corrected answers at a normal pace and follow silently.
 
@@ -64,30 +18,86 @@ After reading the Spoken Recap aloud, ask whether the learner wants to hear toda
 - For partial replay: read only the selected question and corrected answer, then offer the same three choices again.
 - Do not ask any new practice question in either branch.
 
-## 8. Repeat Practice Content
+## Daily Report
 
-Choose no more than five high-value sentences. Present:
+Target one or two A4 pages and never exceed two pages unless the learner explicitly requests a full transcript. Reduce repeated packaging before shrinking essential learning content.
 
-1. Corrected sentence
-2. Short pause marker
-3. One variation
+### 1. Header
 
-The detailed report must still include this repeat-practice content even when the learner declines the spoken Guided Repeat Review.
+- Title: `IELTS Speaking Practice Report - [date]`
+- One short topic line
+- Keep the title visually modest because the report is for private daily use.
 
-## 9. Question and Answer Record
+### 2. Overall Snapshot
 
-- List every question practised in the session in its original order.
-- Preserve the learner's original answer when a reliable transcript is available.
-- Add a minimal correction and a natural Band 7.5-level answer.
-- Mark uncertain transcript wording instead of inventing exact quotations.
+Keep this to two or three short lines:
 
-## 10. Report Save Status
+- Topic
+- Approximate spoken-performance range, clearly marked as formative rather than official
+- The two most important blockers from this session
+
+Do not include `What You Did Well` in a daily report. Do not add separate daily sub-scores unless they materially explain a correction. Do not score pronunciation without audio evidence.
+
+### 3. Your Practice Answers and Corrections
+
+Keep this as the main body and preserve the original question order. For each question include:
+
+- Practice question
+- Learner's original answer or a reliable concise transcript
+- Key corrections, normally no more than three
+- Natural Band 7 answer
+- Natural word combinations aligned with that answer
+
+Use this correction form:
+
+`When you said "[original]", a more natural way to express it is "[correction]". This is mainly a [specific issue] because [brief reason].`
+
+When helpful, add one stronger but natural Band 7 version. Focus first on sentence completion, grammar, prepositions, verb choice, and collocations. Mark uncertain speech-recognition wording as `Possible transcription error`; do not manufacture an exact quotation.
+
+### 4. Natural Word Combinations
+
+Select only high-value items supported by the session. Usually include five to ten, with an upper limit of ten; use fewer when fewer are worth learning. For each item provide:
+
+- English expression
+- Concise Chinese meaning
+- One or two natural synonyms or paraphrases
+- One short reusable example
+
+Bold or italicize the expression inside the Band 7 answer and place its explanation at the corresponding height in the annotation column. Do not repeat the same phrase again in a separate long vocabulary section.
+
+### 5. Print Layout
+
+- A4 portrait.
+- Compact-reference style with a modest title, approximately 14 pt.
+- Main text approximately 9-9.5 pt; headings approximately 10-11 pt.
+- Use a two-column layout table, not newspaper-style flowing columns.
+- Main content column: approximately 14-14.5 cm.
+- Right annotation column: approximately 4-4.5 cm, with a light divider and approximately 7.5-8 pt text.
+- Align each annotation cell vertically with the answer or correction it explains.
+- Use the right column for Chinese meanings, synonyms/paraphrases, concise grammar labels, and short examples.
+- Leave unused space in the right column blank for handwritten notes.
+- Avoid decorative packaging, dense borders, generic advice, repeated spoken-recap text, and Guided Repeat Review metadata.
+
+### 6. Report Save Status
 
 - Format generated: Word or Markdown
 - Archive status: project archive, temporary Voice workspace, skipped, or unavailable
 - Exact save path, when created
 - Session file policy: one separate report per session; never overwrite or merge automatically
+- Return the final project-archive path when archival succeeds; do not return the temporary working-copy path instead.
 
-## 11. Next Focus
+### 7. Optional Final Focus
 
-Recommend one next practice focus. Avoid giving a long development plan at the end of every session.
+Include one short, session-specific focus only when it adds new information. Omit generic repeated advice such as `keep sentences shorter` or `practise active output`.
+
+## Weekly Report
+
+Generate only when the learner asks for a weekly report, including `I need a weekly report.` Summarize the available daily reports for the requested period. Include:
+
+- What the learner did well
+- Observable progress and changes across sessions
+- Recurring sentence-completion, grammar, preposition, verb-choice, and collocation problems
+- Useful language accumulated during the week without duplicating every daily list
+- One next-week focus
+
+Do not claim a trend from a single session. State which dated reports were available and which evidence was missing.

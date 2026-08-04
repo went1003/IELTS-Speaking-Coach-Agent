@@ -1,82 +1,51 @@
-# IELTS Speaking Session Report
+# IELTS Speaking Practice Report - [Date]
 
-## Session Snapshot
+**Today's topic:** [Topic]
 
-- Date:
-- Mode:
-- Topic:
-- Evidence reviewed:
-- Evidence limitation:
+## Overall Snapshot
 
-## Approximate IELTS Assessment
+- **Spoken performance:** [Short formative band range and evidence boundary]
+- **Today's main blockers:** [Blocker 1]; [Blocker 2]
 
-> Formative estimate only; this is not an official IELTS score.
-
-- Overall band range:
-- Fluency and Coherence:
-- Lexical Resource:
-- Grammatical Range and Accuracy:
-- Pronunciation:
-
-## Priority Corrections
-
-### Correction 1
-
-- Original wording:
-- Minimal correction:
-- Band 7.5-level alternative:
-- Reason:
-- Error type:
-- Repeat status:
-
-## Questions and Answers
+## Your Practice Answers and Corrections
 
 ### Question 1
 
-- Question:
-- Learner's original answer:
-- Minimal correction:
-- Natural Band 7.5-level answer:
-- Why this version is better:
+**Practice question**
 
-## Reusable Language
+[Question]
 
-- Collocations:
-- Phrasal verbs and verb phrases:
-- Sentence patterns:
+**Your original answer**
 
-## Topic Reuse Map
+[Reliable transcript or concise answer. Mark uncertain wording as Possible transcription error.]
 
-- Material:
-- Source label:
-- Related topics:
-- Adaptation note:
+**Key corrections**
 
-## Repeat Practice
+1. When you said "[original wording]", a more natural way to express it is "[correction]". This is mainly a [specific issue] because [one- or two-sentence reason].
+2. [Only add another correction when it materially helps. Normally use no more than three.]
 
-1.
-2.
-3.
+**Natural Band 7 answer**
 
-## Spoken Recap
+[Complete natural answer. Bold or italicize useful expressions that are explained in the aligned right annotation column.]
 
+**Aligned annotation column**
 
-## Guided Repeat Review
+- **[Expression]** - [Chinese meaning]; alternatives: [synonym 1 / synonym 2]; example: [short example]
+- **Grammar:** [English error label] - [concise Chinese explanation]
+- [Leave remaining space blank for handwritten notes.]
 
-- Review offered: Yes / No
-- Learner's choice:
-- Review completed: Yes / No / Skipped
-- Full review passes:
-- Partial review requests:
-- Questions replayed:
+## Optional Final Focus
 
+[One new, session-specific focus, or omit this section.]
 
-## Report Save Status
+---
 
-- Format:
-- Archive status:
-- Exact path:
-- Session file policy: Separate session report
+## Word Layout Specification
 
-
-## Next Focus
+- A4 portrait; target one or two pages, maximum two.
+- Use a border-light two-column layout table so notes align with the relevant answer.
+- Main content: approximately 14-14.5 cm wide, 9-9.5 pt body text.
+- Right notes: approximately 4-4.5 cm wide, 7.5-8 pt text with a light left divider.
+- Title approximately 14 pt; section headings approximately 10-11 pt.
+- Right notes contain concise Chinese meanings, synonyms/paraphrases, grammar labels, and short examples. Leave unused space blank for handwriting.
+- Do not include daily `What You Did Well`, detailed score tables, Guided Repeat Review metadata, repeated spoken recap, long topic maps, or generic advice.
