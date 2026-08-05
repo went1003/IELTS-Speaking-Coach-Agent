@@ -4,6 +4,8 @@ A privacy-first, no-API workflow for personalized IELTS Speaking practice, feedb
 
 **Status:** Working local prototype (v0.2), tested with ChatGPT Voice and Codex. No external AI API is required for the current workflow.
 
+**中文简介：** 这是一个面向个人雅思口语训练的 Voice-first AI 学习工作流。它结合 ChatGPT Voice、可复用 Skill 规则与本地 Word 报告，在不接入外部 AI API 的情况下完成练习、纠错、重复复习和学习记录。项目说明以英文为主，并提供中英双语产品案例。
+
 ## Why This Is a Separate Project
 
 The earlier `IELTS-Speaking-Personal-Coach` repository explored an offline Streamlit recording and playback prototype. That prototype answered a technical question: can a small local web app guide recording and replay without an AI API?
@@ -70,10 +72,12 @@ IELTS-Speaking-Coach-Agent/
 ├── data/README.md
 └── docs/
     ├── roadmap.md
-    └── tonight_quick_start.md
+    ├── tonight_quick_start.md
+    ├── ielts_speaking_coach_agent_pm_case_study_bilingual.md
+    └── wechat_article_ielts_speaking_coach_agent_development_story.md
 ```
 
-## How to Use Version 0.1
+## How to Use Version 0.2
 
 Open this repository as the primary folder of a ChatGPT desktop local project. The desktop app automatically discovers repository skills stored under `.agents/skills`. Start a chat in the project, explicitly select `IELTS Speaking Coach`, and then switch to Voice for spoken practice.
 
@@ -89,6 +93,12 @@ Example requests:
 - `Summarize my repeated errors and prepare a session report.`
 
 During practice, the learner may ask a short Chinese vocabulary question such as `大城市怎么说？`. The coach records this as a Language gap, offers natural alternatives such as `major city`, `big city`, and `large metropolitan area`, and reuses the best option in the corrected answer and report.
+
+## Project Documentation
+
+- [Bilingual PM case study](docs/ielts_speaking_coach_agent_pm_case_study_bilingual.md) — an English-Chinese product narrative covering the original recorder prototype, the product pivot, the voice-first workflow, validation, limitations, and portfolio positioning.
+- [Development story for WeChat](docs/wechat_article_ielts_speaking_coach_agent_development_story.md) — a two-part Chinese article about the development process, reusable mistakes, and the screen-free driving use case.
+- Word editions are stored in the same `docs` folder for offline reading, printing, and portfolio preparation.
 
 ## Portfolio Relevance
 
