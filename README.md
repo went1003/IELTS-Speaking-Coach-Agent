@@ -4,7 +4,7 @@ A privacy-first, no-API workflow for personalized IELTS Speaking practice, feedb
 
 **Status:** Working local prototype (v0.2), tested with ChatGPT Voice and Codex. No external AI API is required for the current workflow.
 
-**中文简介：** 这是一个面向个人雅思口语训练的 Voice-first AI 学习工作流。它结合 ChatGPT Voice、可复用 Skill 规则与本地 Word 报告，在不接入外部 AI API 的情况下完成练习、纠错、重复复习和学习记录。项目说明以英文为主，并提供中英双语产品案例。
+**中文简介：** 这是一个面向个人雅思口语训练的 Voice-first AI 学习工作流。它结合 ChatGPT Voice、可复用 Skill 规则与本地 Word 报告，在不接入外部 AI API 的情况下完成练习、纠错、重复复习和学习记录。
 
 ## Why This Is a Separate Project
 
