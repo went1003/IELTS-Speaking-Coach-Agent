@@ -11,6 +11,9 @@ data/working_documents/
 data/database/
 data/output/
 
+# Local publication drafts
+docs/wechat_article_ielts_speaking_coach_agent_development_story.md
+
 # Python environments and caches
 .venv/
 venv/
