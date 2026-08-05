@@ -74,7 +74,7 @@ IELTS-Speaking-Coach-Agent/
     ├── roadmap.md
     ├── tonight_quick_start.md
     ├── ielts_speaking_coach_agent_pm_case_study_bilingual.md
-    └── wechat_article_ielts_speaking_coach_agent_development_story.md
+    └── WeChat_Article_IELTS_Speaking_Coach_Agent_Development_Story.docx
 ```
 
 ## How to Use Version 0.2
@@ -97,7 +97,7 @@ During practice, the learner may ask a short Chinese vocabulary question such as
 ## Project Documentation
 
 - [Bilingual PM case study](docs/ielts_speaking_coach_agent_pm_case_study_bilingual.md) — an English-Chinese product narrative covering the original recorder prototype, the product pivot, the voice-first workflow, validation, limitations, and portfolio positioning.
-- [Development story for WeChat](docs/wechat_article_ielts_speaking_coach_agent_development_story.md) — a two-part Chinese article about the development process, reusable mistakes, and the screen-free driving use case.
+- [Development story for WeChat](docs/WeChat_Article_IELTS_Speaking_Coach_Agent_Development_Story.docx) — a downloadable two-part Chinese Word article about the development process, reusable mistakes, and the screen-free driving use case.
 - Word editions are stored in the same `docs` folder for offline reading, printing, and portfolio preparation.
 
 ## Portfolio Relevance
