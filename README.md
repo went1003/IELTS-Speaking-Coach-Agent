@@ -6,11 +6,19 @@ A privacy-first, no-API workflow for personalized IELTS Speaking practice, feedb
 
 **中文简介：** 这是一个面向个人雅思口语训练的 Voice-first AI 学习工作流。它结合 ChatGPT Voice、可复用 Skill 规则与本地 Word 报告，在不接入外部 AI API 的情况下完成练习、纠错、重复复习和学习记录。
 
-## Why This Is a Separate Project
+## Product Evolution — From Recorder Prototype to Voice-First Agent
 
-The earlier `IELTS-Speaking-Personal-Coach` repository explored an offline Streamlit recording and playback prototype. That prototype answered a technical question: can a small local web app guide recording and replay without an AI API?
+This repository now presents the full product journey in one place.
 
-This repository addresses a different product problem. It defines a reusable coaching skill and a future learning-record system that complement voice conversation instead of recreating a voice interface.
+### Phase 1 — Offline Streamlit Recorder Prototype
+
+The first implementation tested a small local workflow: show a speaking question, record and replay an answer, present expression prompts, and record a second attempt. The prototype worked, but user testing showed that recording alone did not solve the main learning problem and would duplicate capabilities already available in GPT Voice.
+
+The tested code and decision record are preserved under [`prototype/streamlit-recorder`](prototype/streamlit-recorder) as product-development evidence.
+
+### Phase 2 — Voice-First Speaking Coach Agent
+
+The product therefore pivoted from rebuilding a voice interface to complementing one. GPT Voice handles real-time conversation, while the reusable Speaking Coach Skill defines practice modes, correction behavior, guided repeat review, private Word reports, and future long-term learning records.
 
 ## Product Concept
 
@@ -60,6 +68,14 @@ The core coaching workflow is platform-independent, but the skill package is not
 IELTS-Speaking-Coach-Agent/
 ├── README.md
 ├── .gitignore
+├── prototype/
+│   └── streamlit-recorder/
+│       ├── README.md
+│       ├── app.py
+│       ├── coach_rules.py
+│       ├── requirements.txt
+│       ├── prompts/
+│       └── docs/
 ├── .agents/
 │   └── skills/
 │       └── ielts-speaking-coach/
@@ -104,7 +120,7 @@ During practice, the learner may ask a short Chinese vocabulary question such as
 
 This project demonstrates a complete small-product workflow rather than only a prompt file:
 
-- Product discovery: the original offline recorder was tested, evaluated, and deliberately reframed around the learner's real Voice workflow.
+- Product discovery: the runnable offline recorder is preserved as evidence of a tested hypothesis and the decision to pivot toward the learner's real Voice workflow.
 - Prompt and interaction design: practice modes, test-mode boundaries, correction behavior, repeat-review loops, and report triggers are documented as reusable rules.
 - Document automation: structured session data is converted into a compact bilingual A4 Word report with aligned study notes.
 - Privacy-first engineering: personal topic banks, transcripts, reports, databases, and local configuration remain outside the public repository.
