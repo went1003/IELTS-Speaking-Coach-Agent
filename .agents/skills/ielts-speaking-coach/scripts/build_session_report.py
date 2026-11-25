@@ -7,6 +7,9 @@ import argparse
 import json
 import re
 from pathlib import Path
+import sys
+
+from weekly_review import append_weekly_listening_review
 
 from docx import Document
 from docx.enum.table import WD_CELL_VERTICAL_ALIGNMENT, WD_TABLE_ALIGNMENT
@@ -347,6 +350,7 @@ def build_report(data: dict, output_path: Path):
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     doc.save(output_path)
+    return append_weekly_listening_review(data, output_path)
 
 
 def main():
@@ -355,8 +359,15 @@ def main():
     parser.add_argument("output", type=Path, help="Output DOCX path")
     args = parser.parse_args()
     data = json.loads(args.input.read_text(encoding="utf-8"))
-    build_report(data, args.output)
+    try:
+        listening_script = build_report(data, args.output)
+    except (OSError, ValueError, TypeError) as error:
+        print(f"Report export incomplete: {error}", file=sys.stderr)
+        print("The Word may already be saved; weekly TXT archival was not confirmed. Existing weekly files were not intentionally deleted.", file=sys.stderr)
+        raise SystemExit(1)
     print(args.output)
+    if listening_script:
+        print(listening_script)
 
 
 if __name__ == "__main__":

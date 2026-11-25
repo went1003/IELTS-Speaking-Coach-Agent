@@ -9,6 +9,8 @@ description: Run personalized IELTS Speaking practice, mock tests, transcript re
 
 Coach one learner through repeatable IELTS Speaking practice while keeping personal facts, adapted stories, model answers, errors, and reports clearly separated.
 
+Designed for screen-free listening, including time in a car: predictable repetition helps the learner regain the thread after a lapse of attention. Road safety always takes priority; configure the session before driving, never require screen interaction while driving, and do not encourage demanding spoken drills when attention is needed on the road.
+
 This skill can guide a live voice or text conversation. It does not grant file access by itself: use only materials available through the current local project, attached sources, or files supplied by the user. Never claim access to unrelated folders or ChatGPT history.
 
 ## Resolve the Project Root
@@ -75,23 +77,25 @@ When the learner says "please summarize," "give me feedback," or an equivalent p
 9. Map useful material to other IELTS topics only when the connection is genuinely reusable.
 10. Choose a small number of repeated errors for later review.
 11. Give a short spoken recap suitable for listening while driving.
-12. Ask exactly one closing question: "Would you like me to read today's questions and corrected answers aloud at a normal pace for you to follow silently?"
+12. Ask exactly one closing question: "Would you like the three-pass listening and shadowing review before I save your report?"
 13. Wait for the learner's answer before generating the detailed report.
 
 Interpret an affirmative answer such as "Yes," "Yes, I need it," or "Let's review" as a request for Guided Repeat Review:
 
-1. Read one practice question aloud.
-2. Read the learner's corrected natural answer aloud once at a normal, clear speaking pace.
-3. Continue directly to the next practised question and corrected answer. Do not insert artificial pauses, ask the learner to speak, or wait for a response between sentences or questions.
-4. Continue in the original session order until every practised question has been reviewed, unless the learner interrupts.
-5. After the full pass, ask exactly one loop question: "Would you like to hear the full review again, repeat only part of it, or finish and generate the report?"
+Read `references/shadowing_review.md` and complete all three passes without asking for confirmation between them. Use the same full corrected answer in each pass, preserving the learner's intended meaning and substantive details; do not shorten it into a summary or invent achievements.
+
+1. Full-answer pass: read all selected questions and complete corrected answers at a target pace of about 1.2x normal.
+2. Short thought-group pass: read the corrected answers at a target pace of about 0.8x, breaking long sentences into short, meaningful phrases with approximately 1-2 seconds of silence between them.
+3. Full-sentence pass: read the same answers at normal (1.0x) pace, with approximately two seconds between complete sentences.
+4. Do not evaluate or respond to ordinary shadowing, self-talk, or acknowledgements. Continue to completion unless the learner clearly says Stop, asks to end, changes the instruction, or safety requires stopping. Do not promise that these rules disable the Voice app's interruption handling.
+5. Only after all three passes, ask: "Would you like all three passes again, only part of the review, or shall I save your report?"
 
 Handle the loop answer as follows:
 
-- Full review again: repeat the complete question-and-corrected-answer set at normal pace, then ask the same loop question again.
+- Full review again: repeat all three passes, then ask the same loop question again.
 - Finish, No, or generate the report: stop reading and proceed immediately to report generation.
-- Repeat part, including "I'd like to repeat part of it": identify the requested question from its number, topic, or wording. If the target is unclear, ask only which question the learner wants. Read only that question and its corrected answer at normal pace, then ask the same loop question again.
-- Never ask the learner to repeat aloud, never wait for shadowing, and never assess the learner's silent repetition.
+- Repeat part, including "I'd like to repeat part of it": identify the requested question from its number, topic, or wording. If unclear, ask only which question. Apply the same three passes to that selection unless the learner explicitly requests a particular pass, then return to the loop question.
+- Never wait for a learner response inside the three-pass sequence or grade their repetition. Accept a grammatically valid, meaning-preserving alternative; matching the model answer word for word is not the goal.
 
 Interpret a negative answer such as "No," "No, thanks," or "Skip it" as a request to skip Guided Repeat Review and proceed immediately to report generation.
 
@@ -103,6 +107,9 @@ Follow `references/feedback_schema.md`. Use `assets/session_report_template.md` 
 
 - After an end-of-session summary command, generate the detailed report automatically after the Guided Repeat Review is completed or skipped. Do not require a second file request.
 - When the current project root is available, save private reports under `data/output/session_reports/` using a date-and-topic filename. Create the output directories when needed.
+- Also update the weekly listening-review text under `data/output/listening_review_scripts/`. Include questions, full corrected answers, and a short `Repeated-error vocabulary` section with session-supported words/phrases, optional IPA, Chinese meaning, and a clearly labelled confusion pair when relevant. No original wrong answers, scores, long feedback, or unrelated private notes.
+- Supply `repeated_vocabulary` in session JSON using the schema in `references/feedback_schema.md`. Include only items evidenced as repeated errors or explicitly identified by the learner as recurring. A new useful word is not automatically a repeated error. Do not infer pronunciation mistakes from text alone.
+- Use one listening-review text file per Monday-Sunday week, named like `Speaking Exercise 1st August to 7th August 2026.txt`. Accumulate sessions, preserving other sessions on regeneration. Reuse a stable `session_id` or the same report path when regenerating a session so its text is updated rather than duplicated. Use an actual ISO session date, not a sample label or today's date substituted for an unknown date.
 - Create one separate report per practice session. Do not merge a new session into an earlier Word report or overwrite an earlier report. Create a separate weekly or monthly combined review only when the learner explicitly requests one.
 - Keep generated reports separate from raw source documents.
 - Never overwrite the learner's original answer bank.
@@ -120,6 +127,7 @@ When the learner says the session is finished:
 2. Provide the short spoken recap if it has not already been given.
 3. Offer the optional Guided Repeat Review and wait for a Yes or No answer.
 4. Complete or skip the Guided Repeat Review according to the learner's answer.
-5. Generate the detailed report automatically.
-6. State whether the report was archived in the project or only saved temporarily, and give its exact path.
-7. Suggest only one next practice focus based on the current evidence.
+5. Generate the detailed Word report automatically.
+6. Generate or update the weekly listening-review `.txt` file automatically when the project archive is available.
+7. State whether the report and weekly listening-review script were archived in the project or only saved temporarily, and give their exact paths.
+8. Suggest only one next practice focus based on the current evidence.

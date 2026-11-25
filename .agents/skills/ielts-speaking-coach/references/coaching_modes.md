@@ -65,13 +65,13 @@ Use this sequence without adding new practice questions:
 
 1. Stop the practice session.
 2. Give the short spoken recap.
-3. Ask: `Would you like me to read today's questions and corrected answers aloud at a normal pace for you to follow silently?`
-4. If the learner says Yes, run Guided Repeat Review in the original question order: question -> complete corrected answer -> next question. Use a normal, clear speaking pace without waiting for the learner.
+3. Ask: `Would you like the three-pass listening and shadowing review before I save your report?`
+4. If Yes, follow `shadowing_review.md`: full corrected answers at approximately 1.2x; short thought groups at approximately 0.8x with 1-2-second gaps; complete sentences at normal speed with approximately two-second gaps. Complete all three passes without waiting for or grading a response.
 5. If the learner says No, skip the review.
 6. After either branch, generate the detailed report automatically and state its save status and exact location.
 
-After one complete review pass, ask whether the learner wants the full review again, only part of it, or the report. Repeat this loop until the learner chooses the report.
+After all three passes, offer the full three-pass review again, a selected part, or the report. Do not ask between passes. Stop on an explicit stop/end command; ordinary shadowing is not a command. Voice may still interrupt at the client level.
 
-For a partial request such as `I'd like to repeat part of it`, accept a question number, topic, or recognizable wording. Ask which question only when the target cannot be identified. Read only the selected question and corrected answer, then return to the same loop question.
+For `I'd like to repeat part of it`, accept a question number, topic, or recognizable wording. Ask which question only if unclear. Apply the three passes only to that selection unless a particular pass is requested.
 
-Do not pause for shadowing, ask the learner to repeat aloud, assess a repetition, start a new lesson, or add another IELTS question during Guided Repeat Review.
+Use planned silent gaps, not turn-taking waits. Do not assess a repetition, start a new lesson, or add a new question inside the review. Accept valid paraphrases rather than demanding exact memorisation.

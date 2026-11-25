@@ -48,12 +48,16 @@ The core coaching workflow is platform-independent, but the skill package is not
 - Capture of Chinese-to-English language gaps with alternatives and usage distinctions
 - Compact one- or two-page A4 daily reports with an aligned annotation margin
 - A deterministic local Word report builder
+- Three-pass listening and shadowing: full answers (~1.2x), short thought groups (~0.8x with 1-2-second gaps), then complete sentences (1.0x with ~2-second gaps)
+- Weekly listening TXT files containing questions, complete corrected answers, and session-supported repeated-error vocabulary
 - Separate weekly progress reports on request
 - Real, adapted, model, and unverified source labels
 - Privacy rules for personal documents and generated reports
 - A reusable Markdown session-report template
 
 ## Not Included Yet
+
+Speech rates and silence durations above are coaching targets, not precise audio-player controls. Skill instructions cannot disable the Voice client's microphone interruption handling. Actual timing, interruption recovery, and mobile behavior require live testing. No audio recording or MP3 export is provided.
 
 - OpenAI or DeepSeek API integration
 - Automatic access to ChatGPT Voice history
@@ -109,6 +113,16 @@ Example requests:
 - `Summarize my repeated errors and prepare a session report.`
 
 During practice, the learner may ask a short Chinese vocabulary question such as `大城市怎么说？`. The coach records this as a Language gap, offers natural alternatives such as `major city`, `big city`, and `large metropolitan area`, and reuses the best option in the corrected answer and report.
+
+### Listening-first update — 2026-11-25
+
+Designed around screen-free review, including time in a car, where repeated exposure helps the learner pick up the thread again. Set up before driving; road attention takes priority and no screen interaction is required by the drill.
+
+After `Please summarize`, the coach gives a short recap and offers the three-pass review. Once accepted, it does not wait for or grade shadowing between phrases or passes. A clear Stop, end request, or new instruction always takes priority. Only after all three passes does it offer full replay, targeted replay, or report generation. See [the review protocol](.agents/skills/ielts-speaking-coach/references/shadowing_review.md).
+
+Daily Word reports stay separate. A companion weekly TXT is saved under `data/output/listening_review_scripts/`, with names such as `Speaking Exercise 23rd November to 29th November 2026.txt`. New sessions accumulate; regenerating the same session updates its entry. Recurring vocabulary is added only when supported by the session or learner report. These private files remain excluded from Git. Local generation does not automatically synchronize files to a phone.
+
+Validation for this update: ten offline weekly-export tests pass, and the existing daily Word document XML is unchanged for the same sample input. Fresh-process persistence and builder error reporting were also checked. Live Voice pacing, silence timing, shadowing interruption handling, and mobile synchronization have **not** been verified for this update. Run the export tests with `python3 .agents/skills/ielts-speaking-coach/scripts/test_weekly_review.py` (the Word builder separately needs `python-docx`).
 
 ## Project Documentation
 

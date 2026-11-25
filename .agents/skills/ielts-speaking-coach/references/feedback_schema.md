@@ -10,11 +10,11 @@ Write a concise recap suitable for reading aloud. Include the main strength, two
 
 ### 2. Guided Repeat Review Decision
 
-After reading the Spoken Recap aloud, ask whether the learner wants to hear today's questions and corrected answers at a normal pace and follow silently.
+After the Spoken Recap, offer the three-pass listening and shadowing review described in `shadowing_review.md`.
 
-- If Yes: use the original session order. Read each question and complete corrected answer continuously at a normal, clear pace without waiting for the learner.
+- If Yes: complete the full selection at about 1.2x, then short thought groups at about 0.8x with 1-2-second gaps, then whole sentences at 1.0x with two-second gaps. No turn-taking waits, assessments, or confirmation between passes.
 - If No: skip directly to report generation.
-- After a full pass: offer full replay, partial replay, or report generation.
+- Only after all three passes: offer full replay, partial replay, or report generation.
 - For partial replay: read only the selected question and corrected answer, then offer the same three choices again.
 - Do not ask any new practice question in either branch.
 
@@ -112,3 +112,21 @@ Generate only when the learner asks for a weekly report, including `I need a wee
 - One next-week focus
 
 Do not claim a trend from a single session. State which dated reports were available and which evidence was missing.
+
+## Weekly Listening TXT (not a weekly progress report)
+
+Generated alongside each daily Word report. Monday-Sunday files accumulate session questions and full corrected answers, followed by the session's optional `Repeated-error vocabulary` section. Keep scores, incorrect answers, and lengthy explanations out. The Word layout remains unchanged.
+
+Session JSON accepts an optional stable `session_id` and an optional `repeated_vocabulary` list. Each vocabulary item uses:
+
+```json
+{
+  "word": "target word or phrase",
+  "ipa": "optional verified IPA",
+  "meaning_zh": "concise Chinese meaning",
+  "confused_with": "optional word the learner confuses it with",
+  "evidence": "brief session evidence of recurrence, or learner-reported recurrence"
+}
+```
+
+Keep `evidence` in the private source JSON, not in the listening text. Use available audio/transcript or an explicit learner report; do not invent recurrence, phonetic errors, or historical counts. The builder formats supplied items; it does not diagnose or detect errors from audio. A missing list is valid for older session data. Invalid dates must not silently send a session into the wrong week. Regenerating the same session must not duplicate it or erase other sessions.
